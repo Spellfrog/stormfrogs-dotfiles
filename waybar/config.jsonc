@@ -1,0 +1,86 @@
+{
+  "layer": "top",
+  "position": "top", 
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["mpd"],
+  "modules-right": ["tray", "pulseaudio", "backlight", "battery", "clock", "custom/powermenu"],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      // "urgent": "",
+      // "active": "",
+      "default": ""
+    },
+    "sort-by-number": true
+  },
+  "mpd": {
+    "format": "{stateIcon} {title}",
+    "format-disconnected": "Disconnected ",
+    "max-length": 30,
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "on-click": "mpc toggle",
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "custom/powermenu": {
+    "2": [],
+    "format": " ",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/bin/powermenu"
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": " {:%H:%M}",
+    "format-alt": " {:%Y-%m-%d}"
+  },
+  "backlight": {
+    "format": " {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": " {capacity}%",
+    "format-icons": ["", "", ""]
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  }
+}
